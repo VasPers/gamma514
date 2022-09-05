@@ -100,7 +100,9 @@ class BlueBranchBuilder extends StatelessWidget {
                         borderRadius: station.transitData?.isTransit ?? false
                             ? const BorderRadius.all(Radius.elliptical(20, 0))
                             : const BorderRadius.all(Radius.circular(220)),
-                        color: station.transitData?.isTransit ?? false
+                        color:  station.transitData?.isTransitToGreen ?? false
+                          ? Colors.green:
+                          station.transitData?.isTransit ?? false
                             ? Colors.red
                             : Colors.blue.withOpacity(0.7),
                       ),
@@ -200,7 +202,8 @@ class RedBranchBuilder extends StatelessWidget {
                         borderRadius: station.transitData?.isTransit ?? false
                             ? const BorderRadius.all(Radius.elliptical(20, 0))
                             : const BorderRadius.all(Radius.circular(220)),
-                        color: station.transitData?.isTransit ?? false
+                        color:  station.transitData?.isTransitToGreen ?? false
+                      ? Colors.green:station.transitData?.isTransit ?? false
                             ? Colors.blue
                             : Colors.red.withOpacity(0.95)
                       ),
@@ -298,7 +301,8 @@ class GreenBranchBuilder extends StatelessWidget {
                         borderRadius: station.transitData?.isTransit ?? false
                             ? const BorderRadius.all(Radius.elliptical(20, 0))
                             : const BorderRadius.all(Radius.circular(220)),
-                        color: station.transitData?.isTransit ?? false
+                        color:  station.transitData?.isTransitToBlue ?? false
+                            ? Colors.blue: station.transitData?.isTransit ?? false
                             ? Colors.red
                             : Colors.green.withOpacity(0.7),
                       ),

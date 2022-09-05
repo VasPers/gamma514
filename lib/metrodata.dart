@@ -20,23 +20,6 @@ class IconAssets {
   static const String vystavkoviy = 'assets/blue_branch_images/vystavkoviy.jpg';
 }
 
-class MetroStation {
-  final String ukrName;
-  final String engName;
-  final double depth;
-  final String iconImage;
-  final TransitData? transitData;
-  final BranchType branchType;
-
-  const MetroStation({
-    required this.branchType,
-    this.transitData,
-    required this.depth,
-    required this.iconImage,
-    required this.ukrName,
-    required this.engName,
-  });
-}
 
 List<MetroStation> metroStations = [
   const MetroStation(
@@ -86,14 +69,14 @@ List<MetroStation> metroStations = [
       engName: 'Maidan Nezalezhnosti',
       iconImage: IconAssets.maidan,
       depth: 60,
-      transitData: TransitData(isTransit: true, transitStations: []),
+      transitData: TransitData(isTransit: true, transitStations: [], isTransitToBlue: true),
       branchType: BranchType.blueBranch),
   const MetroStation(
       ukrName: 'Площа Льва Толстого',
       engName: 'Ploshcha Lva Tolstogo',
       iconImage: IconAssets.lva,
       depth: 55,
-      transitData: TransitData(isTransit: true, transitStations: []),
+      transitData: TransitData(isTransit: true, transitStations: [], isTransitToGreen: true),
       branchType: BranchType.blueBranch),
   const MetroStation(
       ukrName: 'Олімпійська',
@@ -208,7 +191,7 @@ List<MetroStation> metroStations = [
       engName: 'Teatralna',
       iconImage: IconAssets.teremky,
       depth: 15,
-      transitData: TransitData(isTransit: true, transitStations: []),
+      transitData: TransitData(isTransit: true, transitStations: [], isTransitToGreen: true),
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Хрещатик',
@@ -289,7 +272,7 @@ List<MetroStation> metroStations = [
       engName: 'Palats sportu',
       iconImage: IconAssets.teremky,
       depth: 15,
-      transitData: TransitData(isTransit: true, transitStations: []),
+      transitData: TransitData(isTransit: true, transitStations: [], isTransitToBlue: true),
       branchType: BranchType.greenBranch),
   const MetroStation(
       ukrName: 'Кловська',
@@ -361,9 +344,30 @@ List<MetroStation> metroStations = [
 
 enum BranchType { blueBranch, redBranch, greenBranch }
 
+
+class MetroStation {
+  final String ukrName;
+  final String engName;
+  final double depth;
+  final String iconImage;
+  final TransitData? transitData;
+  final BranchType branchType;
+
+  const MetroStation({
+    required this.branchType,
+    this.transitData,
+    required this.depth,
+    required this.iconImage,
+    required this.ukrName,
+    required this.engName,
+  });
+}
+
 class TransitData {
   final bool isTransit;
   final List<MetroStation> transitStations;
+  final bool? isTransitToBlue;
+  final bool? isTransitToGreen;
 
-  const TransitData({required this.transitStations, required this.isTransit});
+  const TransitData({this.isTransitToBlue, this.isTransitToGreen,required this.transitStations, required this.isTransit});
 }

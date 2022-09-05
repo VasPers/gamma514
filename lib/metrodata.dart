@@ -18,6 +18,40 @@ class IconAssets {
   static const String teremky = 'assets/blue_branch_images/teremky.jpg';
   static const String vasylkivska = 'assets/blue_branch_images/vasylkivska.jpg';
   static const String vystavkoviy = 'assets/blue_branch_images/vystavkoviy.jpg';
+  static const String akadem = 'assets/red_branch_images/akademmistechko.jpg';
+  static const String arsenal = 'assets/red_branch_images/arsenalna.jpg';
+  static const String berest = 'assets/red_branch_images/beresteyska.jpg';
+  static const String chernihivska = 'assets/red_branch_images/chernihivska.jpg';
+  static const String darnitsia = 'assets/red_branch_images/darnitsia.jpg';
+  static const String dnipro = 'assets/red_branch_images/dnipro.jpg';
+  static const String hidropark = 'assets/red_branch_images/hidropark.jpg';
+  static const String khreschyatik = 'assets/red_branch_images/khreshyatyk.jpg';
+  static const String lisova = 'assets/red_branch_images/lisova.jpg';
+  static const String livoberezhna = 'assets/red_branch_images/livoberezhna.jpg';
+  static const String nyvky = 'assets/red_branch_images/nyvky.jpg';
+  static const String politeh = 'assets/red_branch_images/politeh.jpg';
+  static const String shulyavka = 'assets/red_branch_images/shulyavska.jpg';
+  static const String svyatoshin = 'assets/red_branch_images/svyatoshin.jpg';
+  static const String teatralna = 'assets/red_branch_images/teatralna.jpg';
+  static const String universitet = 'assets/red_branch_images/universitet.jpg';
+  static const String vokzalna = 'assets/red_branch_images/vokzalna.jpg';
+  static const String zhytomir = 'assets/red_branch_images/zhytomyrska.jpg';
+  static const String boryspilskia = 'assets/green_branch_images/boryspilska.jpg';
+  static const String chervoniy = 'assets/green_branch_images/chervoniy.jpg';
+  static const String dorogozh = 'assets/green_branch_images/dorogoshichi.jpg';
+  static const String druzhby = 'assets/green_branch_images/drushby.jpg';
+  static const String kharkivska = 'assets/green_branch_images/harkivska.jpg';
+  static const String klovska = 'assets/green_branch_images/klovska.jpg';
+  static const String lukianovska = 'assets/green_branch_images/lukianovska.jpg';
+  static const String osokorky = 'assets/green_branch_images/osokorky.jpg';
+  static const String palatssportu = 'assets/green_branch_images/palatssrportu.jpg';
+  static const String pecherska = 'assets/green_branch_images/pecherska.jpg';
+  static const String poznyaki = 'assets/green_branch_images/pozniaky.jpg';
+  static const String slavutych = 'assets/green_branch_images/slavutych.jpg';
+  static const String syrets = 'assets/green_branch_images/syrets.jpg';
+  static const String vydubichi = 'assets/green_branch_images/vydubichi.jpg';
+  static const String vyrlytsia = 'assets/green_branch_images/vyrlytsia.jpg';
+  static const String zoloti = 'assets/green_branch_images/zoloti.jpg';
 }
 
 
@@ -135,209 +169,209 @@ List<MetroStation> metroStations = [
   const MetroStation(
       ukrName: 'Академмістечко',
       engName: 'Academmisctechko',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.akadem,
       depth: 15,
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Житомирська',
       engName: 'Zhytomyrska',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.zhytomir,
       depth: 15,
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Святошин',
       engName: 'Svyatoshin',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.svyatoshin,
       depth: 15,
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Нивки',
       engName: 'Nyvky',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.nyvky,
       depth: 15,
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Берестейська',
       engName: 'Beresteyska',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.berest,
       depth: 15,
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Шулявська',
       engName: 'Shulyavska',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.shulyavka,
       depth: 15,
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Політехнічний інститут',
       engName: 'Politekhnichniy institute',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.politeh,
       depth: 15,
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Вокзальна',
       engName: 'Vokzalna',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.vokzalna,
       depth: 15,
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Університет',
       engName: 'Universitet',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.universitet,
       depth: 15,
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Театральна',
       engName: 'Teatralna',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.teatralna,
       depth: 15,
       transitData: TransitData(isTransit: true, transitStations: [], isTransitToGreen: true),
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Хрещатик',
       engName: 'Khreshchatyk',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.khreschyatik,
       depth: 15,
       transitData: TransitData(isTransit: true, transitStations: []),
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Арсенальна',
       engName: 'Arsenalna',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.arsenal,
       depth: 15,
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Дніпро',
       engName: 'Dnipro',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.dnipro,
       depth: 15,
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Гідропарк',
       engName: 'Hidropark',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.hidropark,
       depth: 15,
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Лівобережна',
       engName: 'Livoberezhna',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.livoberezhna,
       depth: 15,
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Дарниця',
       engName: 'Darnitsia',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.darnitsia,
       depth: 15,
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Чернігівська',
       engName: 'Chernihivska',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.chernihivska,
       depth: 15,
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Лісова',
       engName: 'Lisova',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.lisova,
       depth: 15,
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Сирець',
       engName: 'Syrets',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.syrets,
       depth: 15,
       branchType: BranchType.greenBranch),
   const MetroStation(
       ukrName: 'Дорогожичі',
       engName: 'Dorogozhichi',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.dorogozh,
       depth: 15,
       branchType: BranchType.greenBranch),
   const MetroStation(
       ukrName: 'Лук`янівська',
       engName: 'Luk`yanivska',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.lukianovska,
       depth: 15,
       branchType: BranchType.greenBranch),
   const MetroStation(
       ukrName: 'Золоті ворота',
       engName: 'Zoloti vorota',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.zoloti,
       depth: 15,
       transitData: TransitData(isTransit: true, transitStations: []),
       branchType: BranchType.greenBranch),
   const MetroStation(
       ukrName: 'Палац спорту',
       engName: 'Palats sportu',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.palatssportu,
       depth: 15,
       transitData: TransitData(isTransit: true, transitStations: [], isTransitToBlue: true),
       branchType: BranchType.greenBranch),
   const MetroStation(
       ukrName: 'Кловська',
       engName: 'Klovska',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.klovska,
       depth: 15,
       branchType: BranchType.greenBranch),
   const MetroStation(
       ukrName: 'Печерська',
       engName: 'Pecherska',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.pecherska,
       depth: 15,
       branchType: BranchType.greenBranch),
   const MetroStation(
       ukrName: 'Дружби народів',
       engName: 'Druzhbi narodiv',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.druzhby,
       depth: 15,
       branchType: BranchType.greenBranch),
   const MetroStation(
       ukrName: 'Видубичі',
       engName: 'Vydubichi',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.vydubichi,
       depth: 15,
       branchType: BranchType.greenBranch),
   const MetroStation(
       ukrName: 'Славутич',
       engName: 'Slavutych',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.slavutych,
       depth: 15,
       branchType: BranchType.greenBranch),
   const MetroStation(
       ukrName: 'Осокорки',
       engName: 'Osokorky',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.osokorky,
       depth: 15,
       branchType: BranchType.greenBranch),
   const MetroStation(
       ukrName: 'Позняки',
       engName: 'Poznyaky',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.poznyaki,
       depth: 15,
       branchType: BranchType.greenBranch),
   const MetroStation(
       ukrName: 'Харківська',
       engName: 'Harkivska',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.kharkivska,
       depth: 15,
       branchType: BranchType.greenBranch),
   const MetroStation(
       ukrName: 'Вирлиця',
       engName: 'Vyrlytsia',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.vyrlytsia,
       depth: 15,
       branchType: BranchType.greenBranch),
   const MetroStation(
       ukrName: 'Бориспільська',
       engName: 'Boryspilska',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.boryspilskia,
       depth: 15,
       branchType: BranchType.greenBranch),
   const MetroStation(
       ukrName: 'Червоний хутір',
       engName: 'Chervoniy hutir',
-      iconImage: IconAssets.teremky,
+      iconImage: IconAssets.chervoniy,
       depth: 15,
       branchType: BranchType.greenBranch),
 ];

@@ -21,13 +21,15 @@ class IconAssets {
   static const String akadem = 'assets/red_branch_images/akademmistechko.jpg';
   static const String arsenal = 'assets/red_branch_images/arsenalna.jpg';
   static const String berest = 'assets/red_branch_images/beresteyska.jpg';
-  static const String chernihivska = 'assets/red_branch_images/chernihivska.jpg';
+  static const String chernihivska =
+      'assets/red_branch_images/chernihivska.jpg';
   static const String darnitsia = 'assets/red_branch_images/darnitsia.jpg';
   static const String dnipro = 'assets/red_branch_images/dnipro.jpg';
   static const String hidropark = 'assets/red_branch_images/hidropark.jpg';
   static const String khreschyatik = 'assets/red_branch_images/khreshyatyk.jpg';
   static const String lisova = 'assets/red_branch_images/lisova.jpg';
-  static const String livoberezhna = 'assets/red_branch_images/livoberezhna.jpg';
+  static const String livoberezhna =
+      'assets/red_branch_images/livoberezhna.jpg';
   static const String nyvky = 'assets/red_branch_images/nyvky.jpg';
   static const String politeh = 'assets/red_branch_images/politeh.jpg';
   static const String shulyavka = 'assets/red_branch_images/shulyavska.jpg';
@@ -36,15 +38,18 @@ class IconAssets {
   static const String universitet = 'assets/red_branch_images/universitet.jpg';
   static const String vokzalna = 'assets/red_branch_images/vokzalna.jpg';
   static const String zhytomir = 'assets/red_branch_images/zhytomyrska.jpg';
-  static const String boryspilskia = 'assets/green_branch_images/boryspilska.jpg';
+  static const String boryspilskia =
+      'assets/green_branch_images/boryspilska.jpg';
   static const String chervoniy = 'assets/green_branch_images/chervoniy.jpg';
   static const String dorogozh = 'assets/green_branch_images/dorogoshichi.jpg';
   static const String druzhby = 'assets/green_branch_images/drushby.jpg';
   static const String kharkivska = 'assets/green_branch_images/harkivska.jpg';
   static const String klovska = 'assets/green_branch_images/klovska.jpg';
-  static const String lukianovska = 'assets/green_branch_images/lukianovska.jpg';
+  static const String lukianovska =
+      'assets/green_branch_images/lukianovska.jpg';
   static const String osokorky = 'assets/green_branch_images/osokorky.jpg';
-  static const String palatssportu = 'assets/green_branch_images/palatssrportu.jpg';
+  static const String palatssportu =
+      'assets/green_branch_images/palatssrportu.jpg';
   static const String pecherska = 'assets/green_branch_images/pecherska.jpg';
   static const String poznyaki = 'assets/green_branch_images/pozniaky.jpg';
   static const String slavutych = 'assets/green_branch_images/slavutych.jpg';
@@ -53,7 +58,6 @@ class IconAssets {
   static const String vyrlytsia = 'assets/green_branch_images/vyrlytsia.jpg';
   static const String zoloti = 'assets/green_branch_images/zoloti.jpg';
 }
-
 
 List<MetroStation> metroStations = [
   const MetroStation(
@@ -103,14 +107,16 @@ List<MetroStation> metroStations = [
       engName: 'Maidan Nezalezhnosti',
       iconImage: IconAssets.maidan,
       depth: 60,
-      transitData: TransitData(isTransit: true, transitStations: [], isTransitToBlue: true),
+      transitData: TransitData(
+          isTransit: true, transitStations: [], isTransitToBlue: true),
       branchType: BranchType.blueBranch),
   const MetroStation(
       ukrName: 'Площа Льва Толстого',
       engName: 'Ploshcha Lva Tolstogo',
       iconImage: IconAssets.lva,
       depth: 55,
-      transitData: TransitData(isTransit: true, transitStations: [], isTransitToGreen: true),
+      transitData: TransitData(
+          isTransit: true, transitStations: [], isTransitToGreen: true),
       branchType: BranchType.blueBranch),
   const MetroStation(
       ukrName: 'Олімпійська',
@@ -225,7 +231,8 @@ List<MetroStation> metroStations = [
       engName: 'Teatralna',
       iconImage: IconAssets.teatralna,
       depth: 15,
-      transitData: TransitData(isTransit: true, transitStations: [], isTransitToGreen: true),
+      transitData: TransitData(
+          isTransit: true, transitStations: [], isTransitToGreen: true),
       branchType: BranchType.redBranch),
   const MetroStation(
       ukrName: 'Хрещатик',
@@ -306,7 +313,8 @@ List<MetroStation> metroStations = [
       engName: 'Palats sportu',
       iconImage: IconAssets.palatssportu,
       depth: 15,
-      transitData: TransitData(isTransit: true, transitStations: [], isTransitToBlue: true),
+      transitData: TransitData(
+          isTransit: true, transitStations: [], isTransitToBlue: true),
       branchType: BranchType.greenBranch),
   const MetroStation(
       ukrName: 'Кловська',
@@ -378,7 +386,6 @@ List<MetroStation> metroStations = [
 
 enum BranchType { blueBranch, redBranch, greenBranch }
 
-
 class MetroStation {
   final String ukrName;
   final String engName;
@@ -403,5 +410,9 @@ class TransitData {
   final bool? isTransitToBlue;
   final bool? isTransitToGreen;
 
-  const TransitData({this.isTransitToBlue, this.isTransitToGreen,required this.transitStations, required this.isTransit});
+  const TransitData(
+      {this.isTransitToBlue,
+      this.isTransitToGreen,
+      required this.transitStations,
+      required this.isTransit});
 }

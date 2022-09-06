@@ -80,13 +80,13 @@ class BlueBranchBuilder extends StatelessWidget {
             .toList();
         return Column(
           children: blueMetroStation
-              .map((station) => Stack(children: [
-                    Container(
-                      height: 34.9,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          color: Colors.blue.shade900.withOpacity(0.5)),
-                    ),
+              .map((station) => Column(children: [
+                    // Container(
+                    //   height: 1,
+                    //   width: double.infinity,
+                    //   decoration: BoxDecoration(
+                    //       color: Colors.blue.shade900.withOpacity(0.5)),
+                    // ),
                     InkWell(
                       highlightColor: Colors.blueAccent,
                       onTap: () => showDialog<String>(
@@ -114,11 +114,8 @@ class BlueBranchBuilder extends StatelessWidget {
                         ),
                       ),
                       child: Container(
-                        // margin: const EdgeInsets.symmetric(vertical: 4.8),
+
                         decoration: BoxDecoration(
-                          borderRadius: station.transitData?.isTransit ?? false
-                              ? const BorderRadius.all(Radius.elliptical(20, 0))
-                              : const BorderRadius.all(Radius.circular(220)),
                           color: station.transitData?.isTransitToGreen ?? false
                               ? Colors.green
                               : station.transitData?.isTransit ?? false
@@ -186,7 +183,11 @@ class BlueBranchBuilder extends StatelessWidget {
                               ]),
                       ),
                     ),
-                  ]))
+              Container(
+                  height: 9.745,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: Colors.blue.shade900.withOpacity(0.5)))]))
               .toList(),
         );
       });
@@ -202,13 +203,8 @@ class RedBranchBuilder extends StatelessWidget {
             .toList();
         return Column(
           children: redBranch
-              .map((station) => Stack(children: [
-                    Container(
-                      height: 34.9,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          color: Colors.red.shade900.withOpacity(0.2)),
-                    ),
+              .map((station) => Column(children: [
+
                     InkWell(
                       highlightColor: Colors.red,
                       onTap: () => showDialog<String>(
@@ -239,11 +235,6 @@ class RedBranchBuilder extends StatelessWidget {
                       child: Container(
                         // margin: const EdgeInsets.symmetric(vertical: 4.8),
                         decoration: BoxDecoration(
-                            borderRadius: station.transitData?.isTransit ??
-                                    false
-                                ? const BorderRadius.all(
-                                    Radius.elliptical(20, 0))
-                                : const BorderRadius.all(Radius.circular(220)),
                             color:
                                 station.transitData?.isTransitToGreen ?? false
                                     ? Colors.green
@@ -308,7 +299,12 @@ class RedBranchBuilder extends StatelessWidget {
                               ]),
                       ),
                     ),
-                  ]))
+            Container(
+              height: 9.745,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  color: Colors.red.shade900.withOpacity(0.2)),
+            ), ]))
               .toList(),
         );
       });
@@ -324,12 +320,8 @@ class GreenBranchBuilder extends StatelessWidget {
             .toList();
         return Column(
           children: greenBranch
-              .map((station) => Stack(children: [
-                    Container(
-                        height: 39.4,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                            color: Colors.green.shade900.withOpacity(0.2))),
+              .map((station) => Column(children: [
+
                     InkWell(
                       highlightColor: Colors.green,
                       onTap: () => showDialog<String>(
@@ -359,9 +351,6 @@ class GreenBranchBuilder extends StatelessWidget {
                       child: Container(
                         // margin: const EdgeInsets.symmetric(vertical: 6.9),
                         decoration: BoxDecoration(
-                          borderRadius: station.transitData?.isTransit ?? false
-                              ? const BorderRadius.all(Radius.elliptical(20, 0))
-                              : const BorderRadius.all(Radius.circular(220)),
                           color: station.transitData?.isTransitToBlue ?? false
                               ? Colors.blue
                               : station.transitData?.isTransit ?? false
@@ -426,7 +415,11 @@ class GreenBranchBuilder extends StatelessWidget {
                               ]),
                       ),
                     ),
-                  ]))
+            Container(
+                height: 13.965,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    color: Colors.green.shade900.withOpacity(0.2))), ]))
               .toList(),
         );
       });

@@ -22,28 +22,28 @@ class App extends StatelessWidget {
                       indicatorSize: TabBarIndicatorSize.label,
                       indicator: BoxDecoration(
                           borderRadius: BorderRadius.only(
-                             bottomLeft:Radius.circular(10) ,
+                              bottomLeft: Radius.circular(10),
                               bottomRight: Radius.circular(10),
                               topLeft: Radius.circular(10),
                               topRight: Radius.circular(10)),
                           color: Colors.white),
                       tabs: [
-                    Tab(
-                        child: Align(
-                      alignment: Alignment.center,
-                      child: Text("BLUE"),
-                    )),
-                    Tab(
-                        child: Align(
-                      alignment: Alignment.center,
-                      child: Text("RED"),
-                    )),
-                    Tab(
-                        child: Align(
-                      alignment: Alignment.center,
-                      child: Text("GREEN"),
-                    ))
-                  ]),
+                        Tab(
+                            child: Align(
+                          alignment: Alignment.center,
+                          child: Text("BLUE"),
+                        )),
+                        Tab(
+                            child: Align(
+                          alignment: Alignment.center,
+                          child: Text("RED"),
+                        )),
+                        Tab(
+                            child: Align(
+                          alignment: Alignment.center,
+                          child: Text("GREEN"),
+                        ))
+                      ]),
                   title: const Align(
                     alignment: Alignment.center,
                     child: Text(
@@ -70,9 +70,14 @@ class App extends StatelessWidget {
   }
 }
 
-class BlueBranchBuilder extends StatelessWidget {
+class BlueBranchBuilder extends StatefulWidget {
   const BlueBranchBuilder({Key? key}) : super(key: key);
 
+  @override
+  State<BlueBranchBuilder> createState() => _BlueBranchBuilderState();
+}
+
+class _BlueBranchBuilderState extends State<BlueBranchBuilder> {
   @override
   Widget build(BuildContext context) => Builder(builder: (context) {
         final List<MetroStation> blueMetroStation = metroStations
@@ -81,12 +86,6 @@ class BlueBranchBuilder extends StatelessWidget {
         return Column(
           children: blueMetroStation
               .map((station) => Column(children: [
-                    // Container(
-                    //   height: 1,
-                    //   width: double.infinity,
-                    //   decoration: BoxDecoration(
-                    //       color: Colors.blue.shade900.withOpacity(0.5)),
-                    // ),
                     InkWell(
                       highlightColor: Colors.blueAccent,
                       onTap: () => showDialog<String>(
@@ -114,7 +113,6 @@ class BlueBranchBuilder extends StatelessWidget {
                         ),
                       ),
                       child: Container(
-
                         decoration: BoxDecoration(
                           color: station.transitData?.isTransitToGreen ?? false
                               ? Colors.green
@@ -127,12 +125,14 @@ class BlueBranchBuilder extends StatelessWidget {
                             ? Row(
                                 children: [
                                   const Expanded(
+                                      flex: 7,
                                       child: Padding(
-                                    padding: EdgeInsets.only(left: 150),
-                                    child:
-                                        Icon(Icons.circle, color: Colors.white),
-                                  )),
+                                        padding: EdgeInsets.only(left: 150),
+                                        child: Icon(Icons.circle,
+                                            color: Colors.white),
+                                      )),
                                   Expanded(
+                                    flex: 7,
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
@@ -156,11 +156,33 @@ class BlueBranchBuilder extends StatelessWidget {
                                       ],
                                     ),
                                   ),
-                                ],
+                                  Expanded(
+                                      flex: 1, child: GestureDetector(child: const Icon(Icons.add_circle),
+  //                                 onTap: () {
+  //                                 setState(() {
+  //                                 if (station.favourite) {
+  //                                 favouriteData.remove(station);
+  //                                 station.favourite = false;
+  //
+  //                                 // Результат favoriteData
+  //                                 print('-----------');
+  // favouriteData.forEach((element) => print(element.ukrName));
+  //                                 print('-----------');
+  //                                 } else {
+  // favouriteData.add(station);
+  //                                 station.favourite = true;
+  //
+  //                                 // Результат favoriteData
+  //                                 print('-----------');
+  //                                 favouriteData.forEach((element) => print(element.ukrName));
+  //                                 print('-----------');
+  //                                 }});}
+                                    )
+  )],
                               )
                             : Row(children: [
                                 Expanded(
-                                    flex: 1,
+                                    flex: 6,
                                     child: Text(
                                       station.ukrName,
                                       style:
@@ -173,29 +195,36 @@ class BlueBranchBuilder extends StatelessWidget {
                                   color: Colors.white,
                                 )),
                                 Expanded(
-                                    flex: 1,
+                                    flex: 6,
                                     child: Text(
                                       station.engName,
                                       style:
                                           const TextStyle(color: Colors.white),
                                       textAlign: TextAlign.left,
                                     )),
+                                const Expanded(flex: 1, child: Icon(Icons.add_circle))
                               ]),
                       ),
                     ),
-              Container(
-                  height: 9.745,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      color: Colors.blue.shade900.withOpacity(0.5)))]))
+                    Container(
+                        height: 9.745,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            color: Colors.blue.shade900.withOpacity(0.5)))
+                  ]))
               .toList(),
         );
       });
 }
 
-class RedBranchBuilder extends StatelessWidget {
+class RedBranchBuilder extends StatefulWidget {
   const RedBranchBuilder({Key? key}) : super(key: key);
 
+  @override
+  State<RedBranchBuilder> createState() => _RedBranchBuilderState();
+}
+
+class _RedBranchBuilderState extends State<RedBranchBuilder> {
   @override
   Widget build(BuildContext context) => Builder(builder: (context) {
         final List<MetroStation> redBranch = metroStations
@@ -204,7 +233,6 @@ class RedBranchBuilder extends StatelessWidget {
         return Column(
           children: redBranch
               .map((station) => Column(children: [
-
                     InkWell(
                       highlightColor: Colors.red,
                       onTap: () => showDialog<String>(
@@ -233,7 +261,6 @@ class RedBranchBuilder extends StatelessWidget {
                         ),
                       ),
                       child: Container(
-                        // margin: const EdgeInsets.symmetric(vertical: 4.8),
                         decoration: BoxDecoration(
                             color:
                                 station.transitData?.isTransitToGreen ?? false
@@ -246,13 +273,17 @@ class RedBranchBuilder extends StatelessWidget {
                             ? Row(
                                 children: [
                                   const Expanded(
+                                      flex: 7,
                                       child: Padding(
-                                    padding: EdgeInsets.only(left: 150),
-                                    child:
-                                        Icon(Icons.circle, color: Colors.white),
-                                  )),
+                                        padding: EdgeInsets.only(left: 150),
+                                        child: Icon(Icons.circle,
+                                            color: Colors.white),
+                                      )),
                                   Expanded(
+                                    flex: 7,
                                     child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
@@ -273,11 +304,13 @@ class RedBranchBuilder extends StatelessWidget {
                                       ],
                                     ),
                                   ),
+                                  const Expanded(
+                                      flex: 1, child: Icon(Icons.add_circle))
                                 ],
                               )
                             : Row(children: [
                                 Expanded(
-                                    flex: 1,
+                                    flex: 6,
                                     child: Text(
                                       station.ukrName,
                                       style:
@@ -285,34 +318,42 @@ class RedBranchBuilder extends StatelessWidget {
                                       textAlign: TextAlign.right,
                                     )),
                                 const Center(
-                                  child:
-                                      Icon(Icons.circle, color: Colors.white),
-                                ),
+                                    child: Icon(
+                                  Icons.circle,
+                                  color: Colors.white,
+                                )),
                                 Expanded(
-                                    flex: 1,
+                                    flex: 6,
                                     child: Text(
                                       station.engName,
                                       style:
                                           const TextStyle(color: Colors.white),
                                       textAlign: TextAlign.left,
                                     )),
+                                const Expanded(flex: 1, child: Icon(Icons.add_circle))
                               ]),
                       ),
                     ),
-            Container(
-              height: 9.745,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  color: Colors.red.shade900.withOpacity(0.2)),
-            ), ]))
+                    Container(
+                      height: 9.745,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          color: Colors.red.shade900.withOpacity(0.2)),
+                    ),
+                  ]))
               .toList(),
         );
       });
 }
 
-class GreenBranchBuilder extends StatelessWidget {
+class GreenBranchBuilder extends StatefulWidget {
   const GreenBranchBuilder({Key? key}) : super(key: key);
 
+  @override
+  State<GreenBranchBuilder> createState() => _GreenBranchBuilderState();
+}
+
+class _GreenBranchBuilderState extends State<GreenBranchBuilder> {
   @override
   Widget build(BuildContext context) => Builder(builder: (context) {
         final List<MetroStation> greenBranch = metroStations
@@ -321,7 +362,6 @@ class GreenBranchBuilder extends StatelessWidget {
         return Column(
           children: greenBranch
               .map((station) => Column(children: [
-
                     InkWell(
                       highlightColor: Colors.green,
                       onTap: () => showDialog<String>(
@@ -349,7 +389,6 @@ class GreenBranchBuilder extends StatelessWidget {
                         ),
                       ),
                       child: Container(
-                        // margin: const EdgeInsets.symmetric(vertical: 6.9),
                         decoration: BoxDecoration(
                           color: station.transitData?.isTransitToBlue ?? false
                               ? Colors.blue
@@ -362,13 +401,17 @@ class GreenBranchBuilder extends StatelessWidget {
                             ? Row(
                                 children: [
                                   const Expanded(
+                                      flex: 7,
                                       child: Padding(
-                                    padding: EdgeInsets.only(left: 150),
-                                    child:
-                                        Icon(Icons.circle, color: Colors.white),
-                                  )),
+                                        padding: EdgeInsets.only(left: 150),
+                                        child: Icon(Icons.circle,
+                                            color: Colors.white),
+                                      )),
                                   Expanded(
+                                    flex: 7,
                                     child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
@@ -389,11 +432,13 @@ class GreenBranchBuilder extends StatelessWidget {
                                       ],
                                     ),
                                   ),
+                                  const Expanded(
+                                      flex: 1, child: Icon(Icons.add_circle))
                                 ],
                               )
                             : Row(children: [
                                 Expanded(
-                                    flex: 1,
+                                    flex: 6,
                                     child: Text(
                                       station.ukrName,
                                       style:
@@ -401,26 +446,30 @@ class GreenBranchBuilder extends StatelessWidget {
                                       textAlign: TextAlign.right,
                                     )),
                                 const Center(
-                                  child:
-                                      Icon(Icons.circle, color: Colors.white),
-                                ),
+                                    child: Icon(
+                                  Icons.circle,
+                                  color: Colors.white,
+                                )),
                                 Expanded(
-                                    flex: 1,
+                                    flex: 6,
                                     child: Text(
                                       station.engName,
                                       style:
                                           const TextStyle(color: Colors.white),
                                       textAlign: TextAlign.left,
                                     )),
+                                const Expanded(flex: 1, child: Icon(Icons.add_circle))
                               ]),
                       ),
                     ),
-            Container(
-                height: 13.965,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    color: Colors.green.shade900.withOpacity(0.2))), ]))
+                    Container(
+                        height: 13.965,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            color: Colors.green.shade900.withOpacity(0.2))),
+                  ]))
               .toList(),
         );
       });
 }
+

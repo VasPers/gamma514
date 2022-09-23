@@ -77,6 +77,8 @@ class BlueBranchBuilder extends StatefulWidget {
   State<BlueBranchBuilder> createState() => _BlueBranchBuilderState();
 }
 
+
+
 class _BlueBranchBuilderState extends State<BlueBranchBuilder> {
   @override
   Widget build(BuildContext context) => Builder(builder: (context) {
@@ -157,28 +159,34 @@ class _BlueBranchBuilderState extends State<BlueBranchBuilder> {
                                     ),
                                   ),
                                   Expanded(
-                                      flex: 1, child: GestureDetector(child: const Icon(Icons.add_circle),
-  //                                 onTap: () {
-  //                                 setState(() {
-  //                                 if (station.favourite) {
-  //                                 favouriteData.remove(station);
-  //                                 station.favourite = false;
-  //
-  //                                 // Результат favoriteData
-  //                                 print('-----------');
-  // favouriteData.forEach((element) => print(element.ukrName));
-  //                                 print('-----------');
-  //                                 } else {
-  // favouriteData.add(station);
-  //                                 station.favourite = true;
-  //
-  //                                 // Результат favoriteData
-  //                                 print('-----------');
-  //                                 favouriteData.forEach((element) => print(element.ukrName));
-  //                                 print('-----------');
-  //                                 }});}
-                                    )
-  )],
+                                      flex: 1,
+                                      child: GestureDetector(
+                                          child: station.isFavourite ?Icon(Icons.remove_circle)  : Icon(Icons.add_circle),
+                                          onTap: () {
+                                            setState(() {
+                                              if (station.isFavourite) {
+                                                favouriteData.remove(station);
+                                                station.isFavourite = false;
+                                                debugPrint('-----------');
+                                                for (var element in favouriteData) {
+                                                  debugPrint(element.ukrName);
+                                                }
+                                                debugPrint('-----------');
+                                              }
+                                              else {
+                                                favouriteData.add(station);
+                                                station.isFavourite = true;
+                                                debugPrint('-----------');
+                                                for (var element in favouriteData) {
+                                                  debugPrint(element.ukrName);
+                                                }
+                                                debugPrint('-----------');
+                                              }
+                                              }
+                                            );
+
+                                          }))
+                                ],
                               )
                             : Row(children: [
                                 Expanded(
@@ -202,7 +210,8 @@ class _BlueBranchBuilderState extends State<BlueBranchBuilder> {
                                           const TextStyle(color: Colors.white),
                                       textAlign: TextAlign.left,
                                     )),
-                                const Expanded(flex: 1, child: Icon(Icons.add_circle))
+                                const Expanded(
+                                    flex: 1, child: Icon(Icons.add_circle))
                               ]),
                       ),
                     ),
@@ -330,7 +339,8 @@ class _RedBranchBuilderState extends State<RedBranchBuilder> {
                                           const TextStyle(color: Colors.white),
                                       textAlign: TextAlign.left,
                                     )),
-                                const Expanded(flex: 1, child: Icon(Icons.add_circle))
+                                const Expanded(
+                                    flex: 1, child: Icon(Icons.add_circle))
                               ]),
                       ),
                     ),
@@ -458,7 +468,8 @@ class _GreenBranchBuilderState extends State<GreenBranchBuilder> {
                                           const TextStyle(color: Colors.white),
                                       textAlign: TextAlign.left,
                                     )),
-                                const Expanded(flex: 1, child: Icon(Icons.add_circle))
+                                const Expanded(
+                                    flex: 1, child: Icon(Icons.add_circle))
                               ]),
                       ),
                     ),
@@ -472,4 +483,5 @@ class _GreenBranchBuilderState extends State<GreenBranchBuilder> {
         );
       });
 }
+
 

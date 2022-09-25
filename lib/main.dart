@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ucheba/widgets.dart';
+import 'package:ucheba/tab.dart';
 
 
 void main() {
